@@ -1,8 +1,8 @@
 ################################
-Contributing to Edunext Eox-Core
+Contributing to Edunext eox-studio
 ################################
 
-Contributions to Edunext Eox-Core are very welcome, 
+Contributions to Edunext eox-studio are very welcome,
 and strongly encouraged! Here's a step-by-step guide 
 that should help you get started.
 
@@ -29,7 +29,7 @@ Step 1: Branch, Commit and Pull Request
 
 .. _conventional commits: https://www.conventionalcommits.org/en/v1.0.0/
 .. _rebase: https://www.atlassian.com/es/git/tutorials/rewriting-history/git-rebase
-.. _CHANGELOG.rst: https://github.com/eduNEXT/eox-core/blob/master/CHANGELOG.rst
+.. _CHANGELOG.rst: https://github.com/eduNEXT/eox-studio/blob/master/CHANGELOG.rst
 
 Step 2: Make Releases
 =====================
