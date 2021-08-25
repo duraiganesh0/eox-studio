@@ -13,6 +13,7 @@ urlpatterns = [  # pylint: disable=invalid-name
     url(r'^grade/$', views.EdxappGrade.as_view(), name='edxapp-grade'),
     url(r'^pre-enrollment/$', views.EdxappPreEnrollment.as_view(), name='edxapp-pre-enrollment'),
     url(r'^userinfo/$', views.UserInfo.as_view(), name='edxapp-userinfo'),
+    url(r'^course/$', views.EdxappCourse.as_view(), name='edxapp-courseinfo'),
 ]
 
 if getattr(settings, "EOX_CORE_ENABLE_UPDATE_USERS", None):

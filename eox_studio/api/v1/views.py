@@ -18,6 +18,8 @@ from rest_framework.renderers import BrowsableAPIRenderer, JSONRenderer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from cms.djangoapps.contentstore.views.course import _create_or_rerun_course
+
 from eox_studio.api.v1.permissions import EoxCoreAPIPermission
 from eox_studio.api.v1.serializers import (
     EdxappCourseEnrollmentQuerySerializer,
@@ -41,6 +43,8 @@ from eox_studio.edxapp_wrapper.pre_enrollments import (
     update_pre_enrollment,
 )
 from eox_studio.edxapp_wrapper.users import create_edxapp_user, get_edxapp_user, get_user_read_only_serializer
+from eox_studio.edxapp_wrapper.courses import create_course
+
 
 try:
     from eox_audit_model.decorators import audit_drf_api
@@ -50,6 +54,18 @@ except ImportError:
         return lambda x: x
 
 LOG = logging.getLogger(__name__)
+
+
+class EdxappCourse(APIView):
+
+    authentication_classes = (BearerAuthentication, SessionAuthentication)
+
+    def post(self, request, *args, **kwargs):
+
+        print("EdxappCourse.post called")
+        print(str(_create_or_rerun_course))
+        return create_course(request)
+
 
 
 class UserQueryMixin:
