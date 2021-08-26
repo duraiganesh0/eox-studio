@@ -2,6 +2,7 @@
 Backend for contenstore courses.
 """
 from cms.djangoapps.contentstore.views.course import _create_or_rerun_course
+# from cms.djangoapps.contentstore.views.course import _create_or_rerun_course
 
 # try:
 #     from cms.djangoapps.contentstore.views.course import (  # pylint: disable=import-error
