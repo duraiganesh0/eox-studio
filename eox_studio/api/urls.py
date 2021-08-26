@@ -7,3 +7,4 @@ app_name = 'eox_studio'  # pylint: disable=invalid-name
 urlpatterns = [  # pylint: disable=invalid-name
     url(r'^v1/', include('eox_studio.api.v1.urls', namespace='eox-api')),
 ]
+ 
