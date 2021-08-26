@@ -19,8 +19,8 @@ def load_permissions():
         try:
             content_type = ContentType.objects.get_for_model(User)
             obj, created = Permission.objects.get_or_create(  # pylint: disable=unused-variable
-                codename='can_call_eox_core',
-                name='Can access eox-core API',
+                codename='can_call_eox_studio',
+                name='Can access eox-studio API',
                 content_type=content_type,
             )
         except ProgrammingError:
@@ -56,8 +56,7 @@ class EoxCoreAPIPermission(permissions.BasePermission):
             client_url_allowed = False
 
         if client_url_allowed or application_uri_allowed:
-            return request.user.has_perm('auth.can_call_eox_core')
-
+            return request.user.has_perm('auth.can_call_eox_studio')
         # If we get here either someone is using a token created on one site in a different site
         # or there was a missconfiguration of the oauth client.
         # To prevent leaking important information we return the most basic message.
