@@ -1,0 +1,3 @@
+pip uninstall -y eox-studio
+pip install -e .
+
