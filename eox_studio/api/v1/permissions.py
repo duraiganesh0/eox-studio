@@ -20,7 +20,7 @@ def load_permissions():
             content_type = ContentType.objects.get_for_model(User)
             obj, created = Permission.objects.get_or_create(  # pylint: disable=unused-variable
                 codename='can_call_eox_studio',
-                name='Can access eox-studio API',
+                name='Can access eox-studio API', 
                 content_type=content_type,
             )
         except ProgrammingError:
