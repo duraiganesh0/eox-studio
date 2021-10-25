@@ -1,3 +1,8 @@
+#! /bin/bash
+
+source /edx/app/edxapp/edxapp_env
+
 pip uninstall -y eox-studio
 pip install -e .
 
+/edx/bin/supervisorctl restart cms
