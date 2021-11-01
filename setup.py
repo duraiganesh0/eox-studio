@@ -79,11 +79,11 @@ setup(
     packages=['eox_studio'],
     include_package_data=True,
     entry_points={
-        "lms.djangoapp": [
-            "eox_studio = eox_studio.apps:EoxCoreConfig",
-        ]
-        # "cms.djangoapp": [
-        #     "eox_studio = eox_studio.apps:EoxCoreCMSConfig",
-        # ],
+        # "lms.djangoapp": [
+        #     "eox_studio = eox_studio.apps:EoxCoreConfig",
+        # ]
+        "cms.djangoapp": [
+            "eox_studio = eox_studio.apps:EoxCoreCMSConfig",
+        ],
     }
 )
