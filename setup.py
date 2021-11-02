@@ -77,6 +77,7 @@ setup(
     platforms=["any"],
     zip_safe=False,
     packages=['eox_studio'],
+    package_data={'eox_studio': ['*', '*/*', '*/*/*']},
     include_package_data=True,
     entry_points={
         # "lms.djangoapp": [
