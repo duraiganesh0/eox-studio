@@ -5,7 +5,6 @@ from __future__ import unicode_literals
 
 from django.apps import AppConfig
 
-
 # class EoxCoreConfig(AppConfig):
 #     """App configuration"""
 #     name = 'eox_studio'
@@ -51,3 +50,12 @@ class EoxCoreCMSConfig(AppConfig):
             },
         },
     }
+
+    def ready(self):
+        from .api.v1.permissions import load_permissions
+        try:
+            load_permissions()
+        except Exception:
+            # During image build / translations / collectstatic
+            pass
+
